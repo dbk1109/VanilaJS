@@ -1,0 +1,19 @@
+body {
+  background-color: beige;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+section {
+  width: 100%;
+  height: 100vmin;
+}
+.hidden {
+  display: none;
+}
+section.imgSection {
+  background-color: gainsboro;
+}
+section.textSection {
+  background-color: burlywood;
+}

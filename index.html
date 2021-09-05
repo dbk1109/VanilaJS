@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모멘텀 바닐라js</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="imgSection"></section>
+    <section class="textSection">
+      <form id="nameForm" class="hidden">
+        <input
+          type="text"
+          placeholder="what is your name?"
+          required
+          maxlength="10"
+        />
+        <input type="submit" value="Log In" />
+      </form>
+      <h1 class="hidden"></h1>
+    </section>
+    <section>
+      <form id="todoForm">
+        <input type="text" placeholder="todo" required />
+        <input type="submit" value="ADD" />
+      </form>
+      <ul id="todoList"></ul>
+    </section>
+
+    <!--실시간 시계
+로컬 스토리지를 사용한 로그인
+로컬 스토리지를 사용한 투두리스트
+랜덤 배경 이미지
+날씨와 위치 (geolocation)-->
+
+    <script src="src/greetings.js"></script>
+    <script src="src/clock.js"></script>
+    <script src="src/background.js"></script>
+    <script src="src/todo.js"></script>
+    <script src="src/weather.js"></script>
+  </body>
+</html>
