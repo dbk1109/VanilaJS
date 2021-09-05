@@ -8,7 +8,7 @@ function actAddTodo(e) {
   e.preventDefault();
   const newTodoObj = {
     text: todoInput.value,
-    s,
+    id: Date.now(),
   };
   todoInput.value = "";
   toDos.push(newTodoObj);
@@ -26,11 +26,11 @@ function makeLine(newTodo) {
   span.innerText = newTodo.text;
 
   const closeBtn = document.createElement("button");
-  closeBtn.innerText = "X";
+  closeBtn.innerText = "✔";
   closeBtn.addEventListener("click", actDelete);
 
-  li.appendChild(span);
   li.appendChild(closeBtn);
+  li.appendChild(span);
   todoList.appendChild(li);
 }
 

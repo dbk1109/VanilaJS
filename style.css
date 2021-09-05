@@ -1,19 +1,74 @@
 body {
-  background-color: beige;
   display: flex;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  font-weight: bold;
 }
 section {
   width: 100%;
   height: 100vmin;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 .hidden {
   display: none;
 }
-section.imgSection {
-  background-color: gainsboro;
+.weather {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2rem 2rem;
+  text-align: right;
+  backdrop-filter: blur(5px);
+  text-shadow: 0 0 50px black;
+  font-size: 1.25rem;
 }
-section.textSection {
-  background-color: burlywood;
+.clock {
+  font-size: 10rem;
+  text-shadow: 0 0 50px black;
+}
+input {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+input[type="submit"] {
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: none;
+  width: 100px;
+}
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 0 20px black;
+}
+ul#todoList li.title {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+ul#todoList {
+  position: absolute;
+  left: 0;
+  padding: 3rem;
+  list-style: none;
+  text-align: left;
+  background-color: aliceblue;
+  color: black;
+}
+#todoList li {
+  margin-bottom: 1rem;
+}
+#todoList button {
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  color: green;
 }
