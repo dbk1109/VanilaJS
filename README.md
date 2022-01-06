@@ -1,2 +1,3 @@
-# paint
-Painting Board made with vjs
+# intro
+
+create new index file for 1 commit per day challenge.
