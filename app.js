@@ -3,8 +3,10 @@ const lineColor = document.getElementById("line-color");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = 800;
-canvas.height = 800;
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 800;
+canvas.width = CANVAS_WIDTH;
+canvas.height = CANVAS_HEIGHT;
 ctx.lineWidth = lineWidth.value;
 ctx.strokeStyle = lineColor.value;
 
@@ -40,6 +42,7 @@ ctx.strokeStyle = lineColor.value;
 //canvas.addEventListener("mousemove", onClick);
 
 let isPainting = false;
+let isFilling = false;
 let fillHolderX;
 let fillHolderY;
 
@@ -76,18 +79,48 @@ canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", onMouseUp);
 canvas.addEventListener("mouseleave", onMouseUp);
+canvas.addEventListener("click", onCanvasClick);
 
 lineWidth.addEventListener("change", onLineWidthChange);
 lineColor.addEventListener("change", onLineColorChange);
 
 const colors = document.querySelectorAll(".color-option");
+const modeBtn = document.getElementById("mode_btn");
+const destroyBtn = document.getElementById("destroy_btn");
+const eraserBtn = document.getElementById("eraser_btn");
 
 function onColorClick(event) {
   let colorValue = event.target.dataset.color;
   ctx.strokeStyle = colorValue;
+  ctx.fillStyle = colorValue;
   lineColor.value = colorValue;
 }
-
-colors.forEach( (e) => {
+function onModeClick(event) {
+  if (isFilling) {
+    isFilling = false;
+    modeBtn.innerText = "Fill";
+  } else {
+    isFilling = true;
+    modeBtn.innerText = "Draw";
+  }
+}
+function onCanvasClick() {
+  if (isFilling) {
+    ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  }
+}
+function onClear() {
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+function onErase() {
+  isFilling = false;
+  ctx.strokeStyle = "white";
+}
+colors.forEach((e) => {
   e.addEventListener("click", onColorClick);
 });
+
+modeBtn.addEventListener("click", onModeClick);
+destroyBtn.addEventListener("click", onClear);
+eraserBtn.addEventListener("click", onErase);
