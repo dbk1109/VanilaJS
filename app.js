@@ -124,3 +124,16 @@ colors.forEach((e) => {
 modeBtn.addEventListener("click", onModeClick);
 destroyBtn.addEventListener("click", onClear);
 eraserBtn.addEventListener("click", onErase);
+
+const fileInput = document.getElementById("file");
+function onFileChange(event) {
+  const file = event.target.files[0];
+  const url = URL.createObjectURL(file);
+  const image = new Image(); //<img src="" />
+  image.src = url;
+  image.onload = function () {
+    ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    fileInput.value = "";
+  };
+}
+fileInput.addEventListener("change", onFileChange);
