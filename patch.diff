@@ -1,0 +1,28 @@
+From 802a33908b64f55127d2d15cc2aeaa8a8cad5ee8 Mon Sep 17 00:00:00 2001
+From: Dabin Kim <dabin1004i@naver.com>
+Date: Fri, 7 Jan 2022 00:17:44 +0900
+Subject: [PATCH] =?UTF-8?q?Docs:=20=EC=83=88=EB=A1=9C=EC=9A=B4=20=EB=A0=88?=
+ =?UTF-8?q?=ED=8F=AC=20=EC=83=9D=EC=84=B1=20=EA=B4=80=EB=A0=A8=20=EC=9D=B8?=
+ =?UTF-8?q?=ED=8A=B8=EB=A1=9C=20=EC=9E=91=EC=84=B1?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ README.md | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/README.md b/README.md
+index 2e9e556..5b46e93 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,3 @@
+-# paint
+-Painting Board made with vjs
++# intro
++
++create new index file for 1 commit per day challenge.
+\ No newline at end of file
+-- 
+2.31.0
+
