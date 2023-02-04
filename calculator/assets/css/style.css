@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "maga_sans";
+  src: url(/include/maga-sans.ttf);
+}
+:root {
+  --br: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "maga_sans", monospace;
+}
+
+body {
+  background-color: #eee;
+  margin: 0;
+  padding: 20px 0;
+}
+
+section {
+  background-color: #fff;
+  padding: 50px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--br);
+  box-shadow: 10px 10px 0px lightgray;
+}
+section .display {
+  border: 2px solid;
+  background-color: #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  text-transform: uppercase;
+  border-radius: var(--br);
+  box-shadow: inset 3px 3px 0 gray;
+}
+section .numbers {
+  display: flex;
+  align-items: stretch;
+}
+section .numbers div {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 10px;
+  min-height: 60vh;
+}
+section .numbers div.hide {
+  display: none;
+}
+section .numbers div button {
+  flex-grow: 1;
+  width: 22.2222222222%;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0 gray;
+  position: inherit;
+  top: -4px;
+  left: -4px;
+  transition: all 0.3s;
+  border: 2px solid;
+}
+section .numbers div button.n0 {
+  width: 44.4444444444%;
+  flex-grow: 3;
+}
+section .numbers div button.nEtc {
+  background-color: #d1d1d1;
+}
+section .numbers div button.nFunc {
+  background-color: lightcoral;
+}
+section .numbers div button.onClick {
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 0 gray;
+}
+section .numbers--right {
+  width: 20%;
+}/*# sourceMappingURL=style.css.map */

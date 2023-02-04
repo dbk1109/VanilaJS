@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "maga_sans";
+  src: url(/include/maga-sans.ttf);
+}
+
+:root {
+  --br: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "maga_sans", monospace;
+}
+
+body {
+  background-color: #eee;
+  margin: 0;
+  padding: 20px 0;
+}
+
+section {
+  background-color: #fff;
+  padding: 50px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--br);
+  box-shadow: 10px 10px 0px lightgray;
+  .display {
+    border: 2px solid;
+    background-color: #eee;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    text-transform: uppercase;
+    border-radius: var(--br);
+    box-shadow: inset 3px 3px 0 gray;
+  }
+  .numbers {
+    display: flex;
+    align-items: stretch;
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      gap: 10px;
+      min-height: 60vh;
+      &.hide {
+        display: none;
+      }
+      button {
+        $position: 4px;
+        flex-grow: 1;
+        width: calc(100% / 4.5);
+        cursor: pointer;
+        border-radius: 20px;
+        box-shadow: 2px 2px 0 gray;
+        position: inherit;
+        top: -$position;
+        left: -$position;
+        transition: all 0.3s;
+        border: 2px solid;
+        &.n0 {
+          width: calc(100% / 4.5 * 2);
+          flex-grow: 3;
+        }
+        &.nEtc {
+          background-color: #d1d1d1;
+        }
+        &.nFunc {
+          background-color: lightcoral;
+        }
+        &.onClick {
+          top: 0;
+          left: 0;
+          box-shadow: 0 0 0 gray;
+        }
+      }
+    }
+    &--right {
+      width: 20%;
+    }
+  }
+}
