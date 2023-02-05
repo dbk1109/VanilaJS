@@ -2,6 +2,7 @@ let display = document.querySelector(".display");
 let btns = document.querySelectorAll(".numbers button");
 const DEFAULT_TEXT = display.innerText;
 let togglePlus = true;
+let operators = ["/", "*", "-", "+", "%"];
 
 function onNumberClick(btn) {
   let nowText = display.innerText;
@@ -22,10 +23,13 @@ function onNumberClick(btn) {
       togglePlus = true;
       display.innerText = nowText.substring(1, nowText.length);
     }
+  } else if (operators.includes(targetNumber)) {
+    singleOperator(btn);
+  } else if (targetNumber === "=") {
+    display.innerText = eval(nowText);
   } else {
     display.innerText += targetNumber;
   }
-  console.log(targetNumber, togglePlus);
 }
 
 function onNumberDown(btn) {
@@ -33,6 +37,17 @@ function onNumberDown(btn) {
 }
 function onNumberUp(btn) {
   btn.target.classList.remove("onClick");
+}
+
+function singleOperator(btn) {
+  let targetText = btn.target.innerText;
+  let nowText = display.innerText;
+  let otherText = nowText.substring(0, nowText.length - 1);
+  let lastText = nowText.substring(nowText.length - 1, nowText.length);
+  if ((lastText = targetText && operators.includes(lastText))) {
+    display.innerText = otherText;
+  }
+  display.innerText += targetText;
 }
 
 for (let btn = 0; btn < btns.length; btn++) {

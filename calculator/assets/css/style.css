@@ -26,7 +26,8 @@ section {
   border-radius: var(--br);
   box-shadow: 10px 10px 0px lightgray;
 }
-section .display {
+
+.display {
   border: 2px solid;
   background-color: #eee;
   padding: 20px;
@@ -35,24 +36,54 @@ section .display {
   text-transform: uppercase;
   border-radius: var(--br);
   box-shadow: inset 3px 3px 0 gray;
+  word-break: break-all;
 }
-section .numbers {
+
+.numbers {
   display: flex;
   align-items: stretch;
+  gap: 10px;
 }
-section .numbers div {
+.numbers--left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 75%;
+  min-height: 60vh;
+}
+.numbers--left .left__top {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  height: calc(20% - 10px);
+}
+.numbers--left .left__top button {
+  background-color: #d1d1d1;
+}
+.numbers--left .left__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 10px;
+  height: 80%;
+}
+.numbers--left button {
+  width: 28.5714285714%;
+}
+.numbers--right {
   display: flex;
   flex-wrap: wrap;
   position: relative;
   gap: 10px;
   min-height: 60vh;
+  flex-direction: column;
+  width: 25%;
 }
-section .numbers div.hide {
-  display: none;
+.numbers--right button {
+  background-color: lightcoral;
 }
-section .numbers div button {
+.numbers button {
   flex-grow: 1;
-  width: 22.2222222222%;
   cursor: pointer;
   border-radius: 20px;
   box-shadow: 2px 2px 0 gray;
@@ -60,23 +91,32 @@ section .numbers div button {
   top: -4px;
   left: -4px;
   transition: all 0.3s;
-  border: 2px solid;
+  border: 2px solid black;
 }
-section .numbers div button.n0 {
-  width: 44.4444444444%;
+.numbers button.n0 {
+  width: 57.1428571429%;
   flex-grow: 3;
 }
-section .numbers div button.nEtc {
-  background-color: #d1d1d1;
-}
-section .numbers div button.nFunc {
-  background-color: lightcoral;
-}
-section .numbers div button.onClick {
+.numbers button.onClick {
   top: 0;
   left: 0;
   box-shadow: 0 0 0 gray;
 }
-section .numbers--right {
-  width: 20%;
+.numbers button.dub {
+  color: transparent;
+}
+.numbers button.dub::after {
+  content: "X";
+  display: flex;
+  position: absolute;
+  color: initial;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.numbers.hide {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
