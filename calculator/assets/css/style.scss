@@ -2,16 +2,14 @@
   font-family: "maga_sans";
   src: url(/include/maga-sans.ttf);
 }
-
-:root {
-  --br: 20px;
-}
-
 * {
   box-sizing: border-box;
   font-family: "maga_sans", monospace;
 }
 
+:root {
+  --br: 20px;
+}
 body {
   background-color: #eee;
   margin: 0;
@@ -50,30 +48,30 @@ section {
     position: relative;
     gap: 10px;
   }
-  &--left {
+  &__left {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: calc(100% / 4 * 3);
     min-height: 60vh;
-    .left__top {
-      display: flex;
-      gap: 10px;
-      position: relative;
-      height: calc(100% / 5 - 10px);
-      button {
-        background-color: #d1d1d1;
-      }
-    }
-    .left__bottom {
-      @include buttonLayout;
-      height: calc(100% / 5 * 4);
-    }
     button {
       width: calc(100% / 3.5);
     }
   }
-  &--right {
+  &__top {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    height: calc(100% / 5 - 10px);
+    button {
+      background-color: #d1d1d1;
+    }
+  }
+  &__bottom {
+    @include buttonLayout;
+    height: calc(100% / 5 * 4);
+  }
+  &__right {
     @include buttonLayout;
     min-height: 60vh;
     flex-direction: column;
@@ -82,43 +80,45 @@ section {
       background-color: lightcoral;
     }
   }
-  button {
-    $position: 4px;
-    flex-grow: 1;
-    cursor: pointer;
-    border-radius: 20px;
-    box-shadow: 2px 2px 0 gray;
-    position: inherit;
-    top: -$position;
-    left: -$position;
-    transition: all 0.3s;
-    border: 2px solid black;
-    &.n0 {
-      width: calc(100% / 3.5 * 2);
-      flex-grow: 3;
-    }
-    &.onClick {
-      top: 0;
-      left: 0;
-      box-shadow: 0 0 0 gray;
-    }
-    &.dub {
-      color: transparent;
-      &::after {
-        content: "X";
-        display: flex;
-        position: absolute;
-        color: initial;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-      }
-    }
-  }
   &.hide {
     display: none;
+  }
+}
+button {
+  $position: 4px;
+  flex-grow: 1;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0 gray;
+  position: inherit;
+  top: -$position;
+  left: -$position;
+  transition: all 0.3s;
+  border: 2px solid black;
+  font-size: 1.25rem;
+  font-weight: bold;
+  &.n0 {
+    width: calc(100% / 3.5 * 2);
+    flex-grow: 3;
+  }
+  &.onClick {
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 gray;
+  }
+  &.dub {
+    color: transparent;
+    &::after {
+      content: "X";
+      display: flex;
+      position: absolute;
+      color: initial;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
   }
 }

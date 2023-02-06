@@ -2,13 +2,13 @@
   font-family: "maga_sans";
   src: url(/include/maga-sans.ttf);
 }
-:root {
-  --br: 20px;
-}
-
 * {
   box-sizing: border-box;
   font-family: "maga_sans", monospace;
+}
+
+:root {
+  --br: 20px;
 }
 
 body {
@@ -44,33 +44,33 @@ section {
   align-items: stretch;
   gap: 10px;
 }
-.numbers--left {
+.numbers__left {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 75%;
   min-height: 60vh;
 }
-.numbers--left .left__top {
+.numbers__left button {
+  width: 28.5714285714%;
+}
+.numbers__top {
   display: flex;
   gap: 10px;
   position: relative;
   height: calc(20% - 10px);
 }
-.numbers--left .left__top button {
+.numbers__top button {
   background-color: #d1d1d1;
 }
-.numbers--left .left__bottom {
+.numbers__bottom {
   display: flex;
   flex-wrap: wrap;
   position: relative;
   gap: 10px;
   height: 80%;
 }
-.numbers--left button {
-  width: 28.5714285714%;
-}
-.numbers--right {
+.numbers__right {
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -79,10 +79,14 @@ section {
   flex-direction: column;
   width: 25%;
 }
-.numbers--right button {
+.numbers__right button {
   background-color: lightcoral;
 }
-.numbers button {
+.numbers.hide {
+  display: none;
+}
+
+button {
   flex-grow: 1;
   cursor: pointer;
   border-radius: 20px;
@@ -92,20 +96,22 @@ section {
   left: -4px;
   transition: all 0.3s;
   border: 2px solid black;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
-.numbers button.n0 {
+button.n0 {
   width: 57.1428571429%;
   flex-grow: 3;
 }
-.numbers button.onClick {
+button.onClick {
   top: 0;
   left: 0;
   box-shadow: 0 0 0 gray;
 }
-.numbers button.dub {
+button.dub {
   color: transparent;
 }
-.numbers button.dub::after {
+button.dub::after {
   content: "X";
   display: flex;
   position: absolute;
@@ -116,7 +122,4 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-}
-.numbers.hide {
-  display: none;
 }/*# sourceMappingURL=style.css.map */

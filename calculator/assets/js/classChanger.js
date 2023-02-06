@@ -2,7 +2,7 @@ let display = document.querySelector(".display");
 let btns = document.querySelectorAll(".numbers button");
 const DEFAULT_TEXT = display.innerText;
 let togglePlus = true;
-let operators = ["/", "*", "-", "+", "%"];
+let operators = ["/", "*", "-", "+", "%", "."];
 
 function onNumberClick(btn) {
   let nowText = display.innerText;
