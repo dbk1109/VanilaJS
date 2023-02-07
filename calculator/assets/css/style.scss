@@ -7,9 +7,8 @@
   font-family: "maga_sans", monospace;
 }
 
-:root {
-  --br: 20px;
-}
+$borderRadious: 20px;
+
 body {
   background-color: #eee;
   margin: 0;
@@ -22,7 +21,7 @@ section {
   margin: 0 auto;
   width: 100%;
   max-width: 600px;
-  border-radius: var(--br);
+  border-radius: $borderRadious;
   box-shadow: 10px 10px 0px lightgray;
 }
 
@@ -33,54 +32,52 @@ section {
   margin-bottom: 20px;
   text-align: right;
   text-transform: uppercase;
-  border-radius: var(--br);
+  border-radius: $borderRadious;
   box-shadow: inset 3px 3px 0 gray;
   word-break: break-all;
+}
+
+@mixin buttonLayout($wrap: wrap, $position: relative) {
+  display: flex;
+  gap: 10px;
+  flex-wrap: $wrap;
+  position: $position;
 }
 
 .numbers {
   display: flex;
   align-items: stretch;
   gap: 10px;
-  @mixin buttonLayout {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    gap: 10px;
+  div {
+    @include buttonLayout;
+  }
+  > div {
+    min-height: 60vh;
   }
   &__left {
-    display: flex;
     flex-direction: column;
-    gap: 10px;
     width: calc(100% / 4 * 3);
-    min-height: 60vh;
     button {
       width: calc(100% / 3.5);
     }
   }
   &__top {
-    display: flex;
-    gap: 10px;
-    position: relative;
     height: calc(100% / 5 - 10px);
     button {
       background-color: #d1d1d1;
     }
   }
   &__bottom {
-    @include buttonLayout;
     height: calc(100% / 5 * 4);
   }
   &__right {
-    @include buttonLayout;
-    min-height: 60vh;
     flex-direction: column;
     width: calc(100% / 4);
     button {
       background-color: lightcoral;
     }
   }
-  &.hide {
+  .hide {
     display: none;
   }
 }

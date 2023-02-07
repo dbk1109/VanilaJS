@@ -7,10 +7,6 @@
   font-family: "maga_sans", monospace;
 }
 
-:root {
-  --br: 20px;
-}
-
 body {
   background-color: #eee;
   margin: 0;
@@ -23,7 +19,7 @@ section {
   margin: 0 auto;
   width: 100%;
   max-width: 600px;
-  border-radius: var(--br);
+  border-radius: 20px;
   box-shadow: 10px 10px 0px lightgray;
 }
 
@@ -34,7 +30,7 @@ section {
   margin-bottom: 20px;
   text-align: right;
   text-transform: uppercase;
-  border-radius: var(--br);
+  border-radius: 20px;
   box-shadow: inset 3px 3px 0 gray;
   word-break: break-all;
 }
@@ -44,45 +40,39 @@ section {
   align-items: stretch;
   gap: 10px;
 }
-.numbers__left {
+.numbers div {
   display: flex;
-  flex-direction: column;
   gap: 10px;
-  width: 75%;
+  flex-wrap: wrap;
+  position: relative;
+}
+.numbers > div {
   min-height: 60vh;
+}
+.numbers__left {
+  flex-direction: column;
+  width: 75%;
 }
 .numbers__left button {
   width: 28.5714285714%;
 }
 .numbers__top {
-  display: flex;
-  gap: 10px;
-  position: relative;
   height: calc(20% - 10px);
 }
 .numbers__top button {
   background-color: #d1d1d1;
 }
 .numbers__bottom {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  gap: 10px;
   height: 80%;
 }
 .numbers__right {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  gap: 10px;
-  min-height: 60vh;
   flex-direction: column;
   width: 25%;
 }
 .numbers__right button {
   background-color: lightcoral;
 }
-.numbers.hide {
+.numbers .hide {
   display: none;
 }
 
