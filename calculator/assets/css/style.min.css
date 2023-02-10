@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "maga_sans";
+  src: url(/include/maga-sans.ttf);
+  src: url(../../);
+}
+* {
+  box-sizing: border-box;
+  font-family: "maga_sans", monospace;
+}
+
+body {
+  background-color: #eee;
+  margin: 0;
+  padding: 20px 0;
+}
+
+section {
+  background-color: #fff;
+  padding: 50px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 0px lightgray;
+}
+
+.display {
+  border: 2px solid;
+  background-color: #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  text-transform: uppercase;
+  border-radius: 20px;
+  box-shadow: inset 3px 3px 0 gray;
+  word-break: break-all;
+}
+
+.numbers {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+.numbers div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.numbers > div {
+  min-height: 60vh;
+}
+.numbers__left {
+  flex-direction: column;
+  width: 75%;
+}
+.numbers__left button {
+  width: 28.5714285714%;
+}
+.numbers__top {
+  height: calc(20% - 10px);
+}
+.numbers__top button {
+  background-color: #d1d1d1;
+}
+.numbers__bottom {
+  height: 80%;
+}
+.numbers__right {
+  flex-direction: column;
+  width: 25%;
+}
+.numbers__right button {
+  background-color: lightcoral;
+}
+.numbers .hide {
+  display: none;
+}
+
+button {
+  flex-grow: 1;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0 gray;
+  position: inherit;
+  top: -4px;
+  left: -4px;
+  transition: all 0.3s;
+  border: 2px solid black;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+button.n0 {
+  width: 57.1428571429%;
+  flex-grow: 3;
+}
+button.onClick {
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 0 gray;
+}
+button.dub {
+  color: transparent;
+}
+button.dub::after {
+  content: "X";
+  display: flex;
+  position: absolute;
+  color: initial;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}/*# sourceMappingURL=style.min.css.map */
