@@ -25,7 +25,7 @@
     - 좌표값 기본은 0,0
     - [html] attr 중에 data- 는 js에서 dataset으로 호출 가능함
     - [js]
-      - getElementsByClassName : 이걸로 가져오면 HTMLCollection으로 호출되어서 Array.from()으로 배열화 해야함.
+      - getElementsByClassName : 이걸로 가져오면 HTMLCollection으로 호출되어서 Array.from()으로 배열화 해야함. <<이게 딱 node array로 애먹었던것>>
       - querySelectorAll : NodeList
     - 속성코드 정리
       - `lineWidth` : 선 굵기
