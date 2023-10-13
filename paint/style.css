@@ -1,3 +1,5 @@
+@import "reset.css";
+
 canvas {
   width: 800px;
   height: 800px;
@@ -6,18 +8,65 @@ canvas {
 }
 
 body {
+  background-color: gainsboro;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  padding: 40px;
+  box-sizing: border-box;
+  gap: 20px;
 }
 .colorSet {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 .color-option {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
+  border: 5px solid white;
+  transition: transform ease-in-out .1s;
+}
+input#line-color {
+  width: 50px;
+  height: 50px;
+}
+.color-option:hover {
+  transform: scale(1.2);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.controls button, .controls label {
+  padding: 10px;
+  background-color: royalblue;
+  color: white;
+  border-radius: 25px;
+  border: 0;
+  font-weight: 500;
+  font-size: 20px;
+  transition: opacity linear .1s;
+  text-align: center;
+}
+.controls label input {display: none;}
+.controls input#text {
+  padding: 10px;
+  border-radius: 25px;
+  border: 0;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+.controls button:hover {
+  opacity: 0.75;
 }

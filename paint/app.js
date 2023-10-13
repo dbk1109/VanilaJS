@@ -145,7 +145,7 @@ function onDoubleClick(event) {
   if (text !== "") {
     ctx.save();
     ctx.lineWidth = 1;
-    ctx.font = "68px serif";
+    ctx.font = "48px serif";
     ctx.fillText(text, event.offsetX, event.offsetY);
     ctx.restore();
   } 
