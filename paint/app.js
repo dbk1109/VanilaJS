@@ -8,6 +8,7 @@ const CANVAS_HEIGHT = 800;
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 ctx.lineWidth = lineWidth.value;
+ctx.lineCap = "round";
 ctx.strokeStyle = lineColor.value;
 
 //ctx.fillRect(50, 50, 100, 150);
@@ -137,3 +138,26 @@ function onFileChange(event) {
   };
 }
 fileInput.addEventListener("change", onFileChange);
+
+const textInput = document.getElementById("text");
+function onDoubleClick(event) {
+  const text = textInput.value;
+  if (text !== "") {
+    ctx.save();
+    ctx.lineWidth = 1;
+    ctx.font = "68px serif";
+    ctx.fillText(text, event.offsetX, event.offsetY);
+    ctx.restore();
+  } 
+}
+canvas.addEventListener("dblclick", onDoubleClick);
+
+const saveBtn = document.getElementById("save");
+function onSaveClick(event) {
+  const url = canvas.toDataURL();
+  const a = document.createElement("a");
+  a.href= url;
+  a.download = "myDerawing.png"
+  a.click()
+}
+saveBtn.addEventListener("click", onSaveClick);
